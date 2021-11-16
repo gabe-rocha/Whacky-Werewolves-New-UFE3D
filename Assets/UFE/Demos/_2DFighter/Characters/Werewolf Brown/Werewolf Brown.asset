@@ -69,9 +69,9 @@ MonoBehaviour:
       _serializedValue: 128849018880
     minJumpDelay: 4
     _jumpDistance:
-      _serializedValue: 30064771072
+      _serializedValue: 64424509440
     _jumpBackDistance:
-      _serializedValue: 34359738368
+      _serializedValue: 64424509440
     cumulativeForce: 1
     multiJumps: 1
     _weight:
@@ -125,9 +125,9 @@ MonoBehaviour:
   normalizeAnimationFrames: 1
   stanceResourcePath:
   - _2DFighter\MoveSets\Werewolf_Brown_Stance_1
-  - _2DFighter\MoveSets\Ethan_Stance_1
-  - _2DFighter\MoveSets\Mecanim_Bot
-  - _2DFighter\MoveSets\Ethan_Stance_2
+  - _2DFighter\MoveSets\Werewolf_Brown_Stance_2
+  - _2DFighter\MoveSets\Werewolf_Brown_Stance_3
+  - _2DFighter\MoveSets\Werewolf_Brown_Stance_4
   moves: []
   aiInstructionsSet:
   - aiInfo: {fileID: 11400000, guid: 381a98fe3348ea640801d8072511a960, type: 2}

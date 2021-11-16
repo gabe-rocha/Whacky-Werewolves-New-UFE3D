@@ -54,29 +54,27 @@ private Canvas mainCanvas;
     public void OnButtonStylePressed(int styleNumber){
         switch(styleNumber){
             case 1:
-                if(UFE.isConnected){
-		            int pNum = UFE.GetLocalPlayer();
-                    if(pNum == 1){
-                        UFE.GetPlayer1ControlsScript().currentCombatStance = CombatStances.Stance1;
-                    }else{
-                        UFE.GetPlayer2ControlsScript().currentCombatStance = CombatStances.Stance1;
-                    }
-                }
-                else{
-                    UFE.GetPlayer1ControlsScript().currentCombatStance = CombatStances.Stance1;
+                // if(UFE.isConnected){
+		        //     int pNum = UFE.GetLocalPlayer();
+                //     if(pNum == 1){
+                //         UFE.GetPlayer1ControlsScript().currentCombatStance = CombatStances.Stance1;
+                //     }else{
+                //         UFE.GetPlayer2ControlsScript().currentCombatStance = CombatStances.Stance1;
+                //     }
+                // }
+                // else{
+                //     // UFE.GetPlayer1ControlsScript().currentCombatStance = CombatStances.Stance1;
                     
-                    foreach (var move in UFE.GetPlayer1().moves)
-                    {
-                        move.combatStance = CombatStances.Stance1;
-                        Debug.Log("Set stance");
-                    }
-                    UFE.GetPlayer1().moves[0].combatStance = CombatStances.Stance1;
+                //     // foreach (var move in UFE.GetPlayer1().moves)
+                //     // {
+                //     //     move.combatStance = CombatStances.Stance1;
+                //     //     Debug.Log("Set stance");
+                //     // }
+                //     // UFE.GetPlayer1().moves[0].combatStance = CombatStances.Stance1;
 
-                    var c = UFE.config.player1Character;
+                //     UFE.GetPlayer1ControlsScript().MoveSet.ChangeMoveStances(CombatStances.Stance1);
 
-                    UFE.GetPlayer1ControlsScript().MoveSet.ChangeMoveStances(CombatStances.Stance1);
-
-                }
+                // }
 
                 var animator = goWerewolf.GetComponent<Animator>();
                 animator.runtimeAnimatorController = animatorStance1;

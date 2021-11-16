@@ -16,7 +16,7 @@ public class GabesFixForMainMenu : MonoBehaviour
     private void Update()
     {
         if(UFE.currentScreen != null){
-            Debug.Log($"{UFE.currentScreen.name}  /  {UFE.GetMainMenuScreen().name}");
+            // Debug.Log($"{UFE.currentScreen.name}  /  {UFE.GetMainMenuScreen().name}");
             
             if(UFE.currentScreen.name.Contains(UFE.GetMainMenuScreen().name)){
                 werewolfMainMenu.SetActive(true);
@@ -43,8 +43,6 @@ public class GabesFixForMainMenu : MonoBehaviour
         }
         
         else{
-            return;
-            
             var game = GameObject.Find("Game");
             if(game != null && stanceSet == false){
                 //we are playing

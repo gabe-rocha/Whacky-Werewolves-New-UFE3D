@@ -284,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &22400016
 RectTransform:
   m_ObjectHideFlags: 0
@@ -300,11 +300,11 @@ RectTransform:
   m_Father: {fileID: 22400018}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 500, y: 497}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 631, y: 57}
   m_SizeDelta: {x: 380, y: 100}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &22200016
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -934,7 +934,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Online
+  m_Text: Quick Play
 --- !u!1 &122468
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,7 +971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 631, y: 94}
+  m_AnchoredPosition: {x: 631, y: 294}
   m_SizeDelta: {x: 380, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &22296496
@@ -1051,7 +1051,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 11479338}
   m_OnClick:
     m_PersistentCalls:
@@ -1358,7 +1358,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Versus Mode
+  m_Text: Practice
 --- !u!1 &158554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,7 +1562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &22498382
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1792,7 +1792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 631, y: 222}
+  m_AnchoredPosition: {x: 631, y: 176}
   m_SizeDelta: {x: 380, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &22251800
