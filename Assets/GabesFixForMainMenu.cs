@@ -44,6 +44,7 @@ public class GabesFixForMainMenu : MonoBehaviour
         
         else{
             return;
+            
             var game = GameObject.Find("Game");
             if(game != null && stanceSet == false){
                 //we are playing

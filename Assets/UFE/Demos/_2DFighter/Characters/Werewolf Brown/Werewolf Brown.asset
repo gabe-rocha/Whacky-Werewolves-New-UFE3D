@@ -50,9 +50,9 @@ MonoBehaviour:
       _serializedValue: 3037000704
   physics:
     _moveForwardSpeed:
-      _serializedValue: 68719476736
+      _serializedValue: 107374182400
     _moveBackSpeed:
-      _serializedValue: 60129542144
+      _serializedValue: 85899345920
     _moveSidewaysSpeed:
       _serializedValue: 17179869184
     highMovingFriction: 1
@@ -115,19 +115,19 @@ MonoBehaviour:
     _serializedValue: 1288490240
   possibleAirMoves: 10
   _blendingTime:
-    _serializedValue: 644245120
+    _serializedValue: 1073741824
   animationType: 1
   avatar: {fileID: 9000000, guid: 2d75d889b3d505142b6f164f38df97a1, type: 3}
   useScaleFlip: 0
   applyRootMotion: 0
   animationFlow: 0
   useAnimationMaps: 1
-  normalizeAnimationFrames: 0
+  normalizeAnimationFrames: 1
   stanceResourcePath:
   - _2DFighter\MoveSets\Werewolf_Brown_Stance_1
   - _2DFighter\MoveSets\Ethan_Stance_1
   - _2DFighter\MoveSets\Mecanim_Bot
-  - _2DFighter\MoveSets\Robot_Kyle
+  - _2DFighter\MoveSets\Ethan_Stance_2
   moves: []
   aiInstructionsSet:
   - aiInfo: {fileID: 11400000, guid: 381a98fe3348ea640801d8072511a960, type: 2}

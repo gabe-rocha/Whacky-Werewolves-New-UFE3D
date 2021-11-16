@@ -15675,10 +15675,10 @@ MonoBehaviour:
           _serializedValue: 0
         z:
           _serializedValue: 0
-    clip: {fileID: 7400000, guid: a0e30386e0e283d4eb5d65ca0f432203, type: 2}
+    clip: {fileID: 7400000, guid: 5ccd4eb02b2e46a43a2f24a459d11f22, type: 3}
     customHitBoxDefinition: {fileID: 0}
     length:
-      _serializedValue: 7695150080
+      _serializedValue: 8589934592
     bakeSpeed: 1
     hitBoxDefinitionType: 0
   _animationSpeed:
@@ -15697,6 +15697,7 @@ MonoBehaviour:
   invertRotationLeft: 0
   invertRotationRight: 0
   autoCorrectRotation: 0
+  allowSideSwitch: 0
   frameWindowRotation: 0
   cooldown: 0
   cooldownFrames: 0
@@ -16506,6 +16507,7 @@ MonoBehaviour:
       z:
         _serializedValue: -1100653056
   lockOnTargets: []
+  switchCharacterOptions: []
   invincibleBodyParts:
   - bodyParts: 
     completelyInvincible: 1
@@ -16542,3 +16544,4 @@ MonoBehaviour:
     damageAbsorption: 0
     nonAffectedBodyParts: 
   projectiles: []
+  rotationPreview: {x: 0, y: 90, z: 0}

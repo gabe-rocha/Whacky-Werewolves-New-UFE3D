@@ -4365,10 +4365,10 @@ MonoBehaviour:
           _serializedValue: 0
         z:
           _serializedValue: 0
-    clip: {fileID: 7400000, guid: 886ad7c43516ed24396602125c189be2, type: 2}
+    clip: {fileID: 7400000, guid: af0608e4efdf77d4c8697f4b39e1c3b9, type: 3}
     customHitBoxDefinition: {fileID: 0}
     length:
-      _serializedValue: 2147483648
+      _serializedValue: 6299285504
     bakeSpeed: 1
     hitBoxDefinitionType: 0
   _animationSpeed:

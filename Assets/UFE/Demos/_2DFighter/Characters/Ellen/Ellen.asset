@@ -127,7 +127,7 @@ MonoBehaviour:
   useAnimationMaps: 1
   normalizeAnimationFrames: 1
   stanceResourcePath:
-  - _2DFighter\MoveSets\Ellen
+  - _2DFighter\MoveSets\Werewolf_Brown_Stance_1
   moves: []
   aiInstructionsSet:
   - aiInfo: {fileID: 11400000, guid: 381a98fe3348ea640801d8072511a960, type: 2}
