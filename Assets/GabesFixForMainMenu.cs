@@ -21,6 +21,11 @@ public class GabesFixForMainMenu : MonoBehaviour
             if(UFE.currentScreen.name.Contains(UFE.GetMainMenuScreen().name)){
                 werewolfMainMenu.SetActive(true);
 
+                var fov = UFE.config.cameraOptions.initialFieldOfView;
+                Camera.main.fieldOfView = fov;
+                Camera.main.transform.position = Vector3.zero;
+                Camera.main.transform.rotation = Quaternion.identity;
+
                 //main menu is loaded, let's check and kill stuff we don't want to see
                 var battleGUI = GameObject.Find("5. BattleGUI(Clone)");
                 if(battleGUI != null){
@@ -43,10 +48,12 @@ public class GabesFixForMainMenu : MonoBehaviour
         }
         
         else{
+            return;
+
             var game = GameObject.Find("Game");
             if(game != null && stanceSet == false){
                 //we are playing
-                var stanceNum = PlayerPrefs.GetInt("currentCombatStance");
+                var stanceNum = PlayerPrefs.GetInt("currentCombatStance", 1);
                 if(UFE.isConnected){
 		            int pNum = UFE.GetLocalPlayer();
                     if(pNum == 1){

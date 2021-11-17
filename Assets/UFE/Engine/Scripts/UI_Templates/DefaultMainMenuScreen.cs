@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Runtime.ExceptionServices;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using UFE3D;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class DefaultMainMenuScreen : MainMenuScreen{
+public class DefaultMainMenuScreen : MainMenuScreen, IConnectionCallbacks{
 	#region public instance fields
 	public AudioClip onLoadSound;
 	public AudioClip music;
@@ -17,6 +20,16 @@ public class DefaultMainMenuScreen : MainMenuScreen{
 	public Button buttonNetwork;
 	public Button buttonBluetooth;
 	#endregion
+
+	private void OnEnable()
+	{
+		PhotonNetwork.AddCallbackTarget(this);
+	}
+
+	private void OnDisable()
+	{
+		PhotonNetwork.RemoveCallbackTarget(this);
+	}
 
 	#region public override methods
 	public override void DoFixedUpdate(
@@ -38,7 +51,43 @@ public class DefaultMainMenuScreen : MainMenuScreen{
 		);
 	}
 
-	public override void OnShow (){
+    public void OnConnected()
+    {
+    }
+
+    public void OnConnectedToMaster()
+    {
+		if (buttonNetwork != null) {
+			buttonNetwork.interactable = true;
+			buttonNetwork.transform.Find("Text").gameObject.GetComponent<Text>().text = "Quick Play";
+		}
+    }
+
+    public void OnCustomAuthenticationFailed(string debugMessage)
+    {
+		if (buttonNetwork != null) {
+			buttonNetwork.interactable = false;
+			buttonNetwork.transform.Find("Text").gameObject.GetComponent<Text>().text = "Connecting...";
+		}
+    }
+
+    public void OnCustomAuthenticationResponse(Dictionary<string, object> data)
+    {
+    }
+
+    public void OnDisconnected(DisconnectCause cause)
+    {
+		if (buttonNetwork != null) {
+			buttonNetwork.interactable = false;
+			buttonNetwork.transform.Find("Text").gameObject.GetComponent<Text>().text = "Connecting...";
+		}
+    }
+
+    public void OnRegionListReceived(RegionHandler regionHandler)
+    {
+    }
+
+    public override void OnShow (){
 		base.OnShow ();
 		this.HighlightOption(this.FindFirstSelectable());
 
@@ -55,7 +104,19 @@ public class DefaultMainMenuScreen : MainMenuScreen{
 		}
 
 		if (buttonNetwork != null) {
-			buttonNetwork.interactable = UFE.isNetworkAddonInstalled || UFE.isBluetoothAddonInstalled;
+			// buttonNetwork.interactable = UFE.isNetworkAddonInstalled || UFE.isBluetoothAddonInstalled;
+			
+			if(PhotonNetwork.IsConnectedAndReady){
+				if (buttonNetwork != null) {
+					buttonNetwork.interactable = true;
+					buttonNetwork.transform.Find("Text").gameObject.GetComponent<Text>().text = "Quick Play";
+				}
+			}else{
+				if (buttonNetwork != null) {
+					buttonNetwork.interactable = false;
+					buttonNetwork.transform.Find("Text").gameObject.GetComponent<Text>().text = "Connecting...";
+				}
+			}
 		}
 
 		if (buttonBluetooth != null){

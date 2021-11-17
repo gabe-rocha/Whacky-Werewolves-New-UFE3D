@@ -37,18 +37,36 @@ private Canvas mainCanvas;
 
         mainCanvas.renderMode = RenderMode.ScreenSpaceCamera;
         mainCanvas.worldCamera = Camera.main;
+        
+        var stanceNum = PlayerPrefs.GetInt("currentCombatStance", 1);
+        var animator = goWerewolf.GetComponent<Animator>();
+
+        switch (stanceNum)
+        {
+            case 1:
+                animator.runtimeAnimatorController = animatorStance1;
+                break;
+            case 2:
+                animator.runtimeAnimatorController = animatorStance2;
+                break;
+            case 3:
+                animator.runtimeAnimatorController = animatorStance3;
+                break;
+            case 4:
+                animator.runtimeAnimatorController = animatorStance4;
+                break;
+            default:
+                animator.runtimeAnimatorController = animatorStance1;
+                break;
+        }
     }
 
-    void Update(){
-
-    }
 #endregion
 
 
 #region Private Methods
 
 #endregion
-
 
 #region Public Methods
     public void OnButtonStylePressed(int styleNumber){

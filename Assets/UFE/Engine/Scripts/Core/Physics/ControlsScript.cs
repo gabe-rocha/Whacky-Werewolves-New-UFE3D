@@ -3775,6 +3775,26 @@ public class ControlsScript : MonoBehaviour {
     {
 		if (UFE.config.roundOptions.resetPositions)
         {
+            var stanceNum = PlayerPrefs.GetInt("currentCombatStance", 1);    
+            switch (stanceNum)
+            {
+                case 1:
+                    myMoveSetScript.ChangeMoveStances(CombatStances.Stance1);
+                    break;
+                case 2:
+                    myMoveSetScript.ChangeMoveStances(CombatStances.Stance2);
+                    break;
+                case 3:
+                    myMoveSetScript.ChangeMoveStances(CombatStances.Stance3);
+                    break;
+                case 4:
+                    myMoveSetScript.ChangeMoveStances(CombatStances.Stance4);
+                    break;
+                default:
+                    myMoveSetScript.ChangeMoveStances(CombatStances.Stance1);
+                    break;
+            }
+
             myMoveSetScript.PlayBasicMove(myMoveSetScript.basicMoves.idle, myMoveSetScript.basicMoves.idle.name, 0);
 			myPhysicsScript.ForceGrounded();
 

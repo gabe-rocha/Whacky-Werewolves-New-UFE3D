@@ -27,7 +27,8 @@ namespace UFE3D
 
 		public virtual void GoToVersusModeScreen()
 		{
-			UFE.StartVersusModeScreen();
+			// UFE.StartVersusModeScreen();
+			UFE.StartPlayerVersusCpu();
 		}
 
 		public virtual void GoToTrainingModeScreen()

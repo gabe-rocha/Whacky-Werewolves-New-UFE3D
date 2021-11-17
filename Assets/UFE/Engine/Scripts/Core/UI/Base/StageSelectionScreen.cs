@@ -18,9 +18,14 @@ namespace UFE3D
 		#region public instance methods
 		public virtual void GoToCharacterSelectionScreen()
 		{
+			var mainCanvas = FindObjectOfType<Canvas>();
+			if(mainCanvas != null)				{
+				mainCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+				UFE.config.selectedStage = null;
+			}
+
 			if (UFE.gameMode == GameMode.NetworkGame)
 			{
-				UFE.config.selectedStage = null;
 				this.TrySelectStage(-1);
 			}
 			else

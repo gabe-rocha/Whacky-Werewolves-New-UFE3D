@@ -1135,14 +1135,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7209534785503137146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4d4d13448fb2274abb3b18e38e53ff7, type: 3}
+  m_Script: {fileID: 11500000, guid: 807b10ded1ec9524383866022cc1d5f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnStyle01: {fileID: 0}
-  btnStyle02: {fileID: 0}
-  btnStyle03: {fileID: 0}
-  btnStyle04: {fileID: 0}
-  firstButtonSelected: {fileID: 0}
+  btnStyle01: {fileID: 4538257901066476483}
+  btnStyle02: {fileID: 8412374921863259825}
+  btnStyle03: {fileID: 6103322480071422870}
+  btnStyle04: {fileID: 3743844227530006459}
+  firstButtonSelected: {fileID: 4538257901066476483}
   goWerewolf: {fileID: 0}
   stanceSelectionCamera: {fileID: 0}
   animatorStance1: {fileID: 0}

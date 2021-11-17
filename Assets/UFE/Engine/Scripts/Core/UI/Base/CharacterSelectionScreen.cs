@@ -31,7 +31,8 @@ public class CharacterSelectionScreen : UFEScreen {
 		this.closing = true;
 
 		if (UFE.gameMode == GameMode.VersusMode){
-			UFE.DelaySynchronizedAction(this.GoToVersusModeScreen, 0);
+			// UFE.DelaySynchronizedAction(this.GoToVersusModeScreen, 0);
+			UFE.StartCharacterSelectionScreen();
 		}else if (UFE.gameMode == GameMode.NetworkGame){
 			UFE.DelaySynchronizedAction(this.DisconnectFromMatch, 0);
 		}else{
@@ -188,6 +189,7 @@ public class CharacterSelectionScreen : UFEScreen {
 	public override void OnShow (){
 		base.OnShow();
 
+
 		if (UFE.gameMode == GameMode.StoryMode){
 			this.selectableCharacters = UFE.GetStoryModeSelectableCharacters();
 		}else if (UFE.gameMode == GameMode.TrainingRoom){
@@ -200,6 +202,8 @@ public class CharacterSelectionScreen : UFEScreen {
 		UFE.SetPlayer2(null);
 		this.SetHoverIndex(1, 0);
 		this.SetHoverIndex(2, this.GetMaxCharacterIndex());
+
+		this.TrySelectCharacter(0, 2);
 	}
 
 	public override void SelectOption (int option, int player){

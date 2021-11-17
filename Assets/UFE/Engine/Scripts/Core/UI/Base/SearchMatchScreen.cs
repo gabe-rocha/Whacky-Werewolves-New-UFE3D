@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections;
 
 namespace UFE3D
 {
@@ -20,6 +21,10 @@ namespace UFE3D
         protected IList<MultiplayerAPI.MatchInformation> _foundMatches = new List<MultiplayerAPI.MatchInformation>();
         protected IList<MultiplayerAPI.MatchInformation> _triedMatches = new List<MultiplayerAPI.MatchInformation>();
         protected MultiplayerAPI.MatchInformation current_match = null;
+
+        private Coroutine playWithBotIfNoMatchFoundCor;
+
+
         #endregion
 
         #region public override methods
@@ -112,6 +117,14 @@ namespace UFE3D
                 if (UFE.config.debugOptions.connectionLog) Debug.Log("Match Created: " + match.matchName);
             }
             if (UFE.config.debugOptions.connectionLog) Debug.Log("Waiting for opponent...");
+
+            playWithBotIfNoMatchFoundCor = StartCoroutine(PlayWithBotIfNoMatchFoundCor());
+
+        }
+
+        private IEnumerator PlayWithBotIfNoMatchFoundCor(){
+            yield return new WaitForSeconds(5f);
+            UFE.StartPlayerVersusCpu();            
         }
 
         protected virtual void OnMatchCreationError()
@@ -209,6 +222,10 @@ namespace UFE3D
 
             UFE.multiplayerMode = UFE.MultiplayerMode.Online;
             this.StopSearchingMatchGames();
+
+            if(playWithBotIfNoMatchFoundCor != null){
+                StopCoroutine(playWithBotIfNoMatchFoundCor);
+            }
 
             if (UFE.config.debugOptions.connectionLog) Debug.Log("(OnJoined) Match Starting...");
             UFE.StartNetworkGame(0.5f, 2, false);
