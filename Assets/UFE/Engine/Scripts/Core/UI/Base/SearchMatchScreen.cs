@@ -123,8 +123,8 @@ namespace UFE3D
         }
 
         private IEnumerator PlayWithBotIfNoMatchFoundCor(){
-            yield return new WaitForSeconds(5f);
-            UFE.StartPlayerVersusCpu();            
+            yield return new WaitForSeconds(15f);
+            UFE.StartPlayerVersusCpu();
         }
 
         protected virtual void OnMatchCreationError()
