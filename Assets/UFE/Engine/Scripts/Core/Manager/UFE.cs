@@ -117,6 +117,9 @@ public class UFE : MonoBehaviour, UFEInterface
 
 	public delegate void InputHandler(InputReferences[] inputReferences, int player);
 	public static event InputHandler OnInput;
+
+	public static bool isShowingLoginOrRegisterScreen = false;
+
 	#endregion
 
 	#region network definitions

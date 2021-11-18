@@ -36,7 +36,7 @@ public class PhotonConnector : MonoBehaviourPunCallbacks, IOnEventCallback
 
 	#region public instance properties
 	//public PlayFabConnector PlayFabConnector{get;set;}
-    public bool debugInfo = true;
+    public bool debugInfo = false;
 	#endregion
 
 	#region protected instance fields

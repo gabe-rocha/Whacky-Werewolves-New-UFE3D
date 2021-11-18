@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UFE3D;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 
 public class DefaultMainMenuScreen : MainMenuScreen, IConnectionCallbacks{
 	#region public instance fields
@@ -19,6 +20,8 @@ public class DefaultMainMenuScreen : MainMenuScreen, IConnectionCallbacks{
 
 	public Button buttonNetwork;
 	public Button buttonBluetooth;
+
+	[SerializeField] private TextMeshProUGUI textGameVersion, textUserName;
 	#endregion
 
 	private void OnEnable()
@@ -49,6 +52,10 @@ public class DefaultMainMenuScreen : MainMenuScreen, IConnectionCallbacks{
 			this.selectSound,
 			this.cancelSound
 		);
+		
+		textGameVersion.text = $"v{Application.version}";
+		textUserName.text = DBManager.Instance.username;
+
 	}
 
     public void OnConnected()
@@ -89,6 +96,8 @@ public class DefaultMainMenuScreen : MainMenuScreen, IConnectionCallbacks{
 
     public override void OnShow (){
 		base.OnShow ();
+		
+
 		this.HighlightOption(this.FindFirstSelectable());
 
 		if (this.music != null){
@@ -123,5 +132,10 @@ public class DefaultMainMenuScreen : MainMenuScreen, IConnectionCallbacks{
             buttonBluetooth.interactable = UFE.isBluetoothAddonInstalled;
         }
 	}
+
+	public void Logout(){
+		DBManager.Instance.LogOut();
+	}
+
 	#endregion
 }

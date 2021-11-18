@@ -728,8 +728,28 @@ public class DefaultBattleGUI : BattleGUI{
 			if (winner.roundsWon > Mathf.Ceil(UFE.config.roundOptions.totalRounds/2)){
 				if (winnerPlayer == 1) {
 					UFE.PlaySound(this.announcer.player1Wins);
-				}else{
+					
+					//Gabe
+					if(UFE.gameMode == GameMode.NetworkGame && DBManager.Instance.IsLoggedIn){
+						if(UFE.localPlayerController.player == 1){
+							DBManager.Instance.AddWinToLocalPlayer();
+						}
+						else{
+							DBManager.Instance.AddLossToLocalPlayer();
+						}
+					}
+				}else if (winnerPlayer == 2) {
 					UFE.PlaySound(this.announcer.player2Wins);
+
+					//Gabe
+					if(UFE.gameMode == GameMode.NetworkGame && DBManager.Instance.IsLoggedIn){
+						if(UFE.localPlayerController.player == 2){
+							DBManager.Instance.AddWinToLocalPlayer();
+						}
+						else{
+							DBManager.Instance.AddLossToLocalPlayer();
+						}
+					}
 				}
 			}
 

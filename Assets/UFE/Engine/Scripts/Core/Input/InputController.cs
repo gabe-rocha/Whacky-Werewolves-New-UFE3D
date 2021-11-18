@@ -38,7 +38,7 @@ namespace UFE3D
 
 		public override InputEvents ReadInput(InputReferences inputReference)
 		{
-			if (inputReference != null)
+			if (inputReference != null && !UFE.isShowingLoginOrRegisterScreen)
 			{
 				string buttonName = inputReference.inputButtonName;
 				string joystickAxisName = inputReference.joystickAxisName;
